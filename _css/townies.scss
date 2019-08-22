@@ -1,0 +1,17 @@
+@import "settings";
+@import "foundation";
+@include foundation-everything;
+
+body {
+}
+
+footer {
+    background: #000;
+    min-height: 200px;
+}
+
+.shop {
+    background: url('/img/shop.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 300px;
+}

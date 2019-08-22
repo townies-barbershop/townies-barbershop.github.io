@@ -1,0 +1,33 @@
+{
+  "name": "towniesbarbershop.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "child_process": "^1.0.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-filelog": "^0.4.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "run-sequence": "^1.2.2"
+  },
+  "scripts": {
+    "build:prod": "JEKYLL_ENV=production npm run gulp:build",
+    "gulp:develop": "gulp",
+    "gulp:build": "gulp build",
+    "htmlProofer": "bundle exec htmlproofer --disable-external ./_site",
+    "test": "npm run htmlProofer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/townies-barbershop/towniesbarbershop.github.io.git"
+  },
+  "author": "",
+  "homepage": "https://www.towniesbarbershop.com",
+  "dependencies": {
+    "foundation-sites": "^6.5.3"
+  }
+}

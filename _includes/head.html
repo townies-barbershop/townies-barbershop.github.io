@@ -1,0 +1,48 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="{% if page.meta.description %}{{ page.meta.description }}{% endif %}" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html', ''}}">
+    <link type="text/css" rel="stylesheet" media="all" href="/css/townies.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "HairSalon",
+        "name": "Townies Barbershop",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2909 Corrine Dr",
+          "addressLocality": "Orlando",
+          "addressRegion": "FL",
+          "postalCode": "32803"
+        },
+        "image": "https://www.towniesbarbershop.com/img/logo.png",
+        "telePhone": "407-459-3589",
+        "url": "https://www.towniesbarbershop.com",
+        "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 0-0",
+        "openingHoursSpecification": [ {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "0",
+          "closes": "0"
+        } ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "28.568048",
+          "longitude": "-81.347053"
+        },
+        "priceRange":"$"
+      
+      }
+      </script>
+  </head>
