@@ -5,6 +5,7 @@
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
+@import url("https://fonts.googleapis.com/css?family=EB+Garamond&display=swap");
 @media print, screen and (min-width: 40em) {
   .reveal, .reveal.tiny, .reveal.small, .reveal.large {
     right: auto;
@@ -4757,11 +4758,53 @@ html.is-reveal-open {
     .show-for-portrait {
       display: block !important; } }
 
+* {
+  font-family: 'EB Garamond', serif;
+  font-size: 20px; }
+
+body {
+  background-color: #eee; }
+
 footer {
-  background: #000;
-  min-height: 200px; }
+  background: #232f6d;
+  color: #fff;
+  min-height: 200px;
+  padding-top: 40px; }
+
+h1 {
+  font-family: 'EB Garamond', serif;
+  text-decoration: overline; }
+
+.menu {
+  margin-top: 10px; }
+  .menu a {
+    font-weight: bold;
+    text-transform: uppercase; }
 
 .shop {
   background: url("/img/shop.jpg") no-repeat center center fixed;
   background-size: cover;
+  margin-bottom: 20px;
   min-height: 300px; }
+
+.card {
+  border-radius: 5px; }
+
+.info {
+  background: url("/img/anchor.png") no-repeat bottom right;
+  padding: 20px; }
+  .info h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 30px;
+    padding-bottom: 20px; }
+  .info p {
+    color: #777; }
+
+.avatar {
+  float: left;
+  width: 100%; }
+
+.insta img {
+  height: 50px;
+  margin-bottom: 20px;
+  width: 50px; }

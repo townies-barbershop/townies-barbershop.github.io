@@ -15,8 +15,8 @@ title: Welcome
       <p>We are located at</p>
       <p><a href="https://g.page/towniesbarbershop" target="_blank">2909 Corrine Dr, Orlando, FL 32803</a></p>
       <p>HOURS</p>
-      <p>7 days a week</p>
-      <p>Early - Late</p>
+      <p>Tuesday - Sunday</p>
+      <p>9a - 6p, usually</p>
     </div>
   </div>
 </div>

@@ -3,9 +3,26 @@ title: Barbers
 ---
 
 <div class="grid-container">
-  <div class="grid-x">
-    <div class="cell">
-      <p class="text-center">Colin & Alex</p>
+  <div class="grid-x grid-margin-x barbers">
+    <div class="cell large-6">
+      <div class="card grid-x">
+        <img class="avatar" src="/img/colin.jpg">
+        <div class="info">
+          <h2>Colin Davey</h2>
+          <p>Phone: <a href="tel:4074593589">(407) 459-3589</a></p>
+          <p>Insta: <a href="https://www.instagram.com/bostoncolin/" target="_blank">@bostoncolin</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="cell large-6">
+      <div class="card">
+        <img class="avatar" src="/img/alex.jpg">
+        <div class="info">
+          <h2>Alex Kuechenmeister</h2>
+          <p>Phone: <a href="tel:4073993598">(407) 399-3598</a></p>
+          <p>Insta: <a href="https://www.instagram.com/alexkthebarber/" target="_blank">@alexkthebarber</a></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
