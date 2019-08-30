@@ -7,6 +7,9 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var gutil = require('gulp-util');
 var sequence = require('run-sequence');
+var postcss = require('gulp-postcss');
+var uncss = require('uncss').postcssPlugin;
+var cssnano = require('cssnano');
 
 gulp.task('default', function(done) {
   sequence('sass', 'js', 'jekyll:serve', 'sass:watch', 'js:watch', done);
@@ -27,6 +30,14 @@ gulp.task('sass', function() {
       //outputStyle: 'compressed'
     })
     .on('error', sass.logError))
+    .pipe(postcss([uncss({
+        csspath: '_site/css/townies.css',
+        html: [
+          '_site/index.html',
+          '_site/appointments.html',
+          '_site/barbers.html',
+        ],
+      }), cssnano()]))
     .pipe(gulp.dest('./css'))
     .pipe(filelog());
 });
