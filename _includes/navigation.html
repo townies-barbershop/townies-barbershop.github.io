@@ -1,4 +1,3 @@
 {% assign current = page.url | downcase | split: '/' | last %}
 <li{% if page.url == "/" %} class="active-trail active" {% endif %}><a href="/" title="Home" {% if page.url == "/" %} class="active" {% endif %}>Home</a></li>
-<li{% if current == "appointments.html" %} class="active-trail active" {% endif %}><a href="/appointments" title="Appointments" {% if current == "appointments.html" %}class="active" {% endif %}>Appointments</a></li>
-<li{% if current == "barbers.html" %} class="active-trail active" {% endif %}><a href="/barbers" title="Barbers" {% if current == "barbers.html" %} class="active" {% endif %}>Barbers</a></li>
+<li{% if current == "barbers.html" %} class="active-trail active" {% endif %}><a href="/barbers" title="Barbers" {% if current == "barbers.html" %} class="active" {% endif %}>Appointments / Barbers</a></li>
