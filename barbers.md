@@ -1,41 +1,37 @@
 ---
 title: Barbers
+barbers:
+  - name: "Colin Davey"
+    image: "/img/colin.jpg"
+    phone: "(407) 459-3589"
+    insta: "bostoncolin"
+    square: "https://square.site/book/5CGVSJ9WRXGYM/townies-barbershop-orlando-fl"
+  - name: "Alex Kuechenmeister"
+    image: "/img/alex.jpg"
+    phone: "(407) 399-3598"
+    insta: "alexkthebarber"
+    square: "https://square.site/book/BE2BBS4A7C5DP/alex-the-barber"
+  - name: "Tito Santiago"
+    image: "/img/tito.jpg"
+    phone: "(407) 432-2957"
+    insta: "barbertitosantiago"
+    square: "https://square.site/book/414FC5X6H1XTC/barber-tito-orlando-fl"
 ---
 
 <div class="grid-container">
   <div class="grid-x grid-margin-x barbers">
+    {% for barber in page.barbers %}
     <div class="cell large-4">
       <div class="card">
-        <img class="avatar" alt="Colin Davey" src="/img/colin.jpg">
+        <img class="avatar" alt="{{ barber.name }}" src="{{ barber.image }}">
         <div class="info">
-          <h2>Colin Davey</h2>
-          <p>Phone: <a href="tel:4074593589">(407) 459-3589</a></p>
-          <p>Insta: <a href="https://www.instagram.com/bostoncolin/" rel="noopener" target="_blank">@bostoncolin</a></p>
-          <p>Square: <a href="https://square.site/book/5CGVSJ9WRXGYM/townies-barbershop-orlando-fl" rel="noopener" target="_blank">@colin</a></p>
+          <h2>{{ barber.name }}</h2>
+          <p>Phone: <a href="tel:{{ barber.phone | remove: "(" | remove: ")" | remove: " " | remove: "-" }}">{{ barber.phone }}</a></p>
+          <p>Insta: <a href="https://www.instagram.com/{{ barber.insta }}/" rel="noopener" target="_blank">@{{ barber.insta }}</a></p>
+          <p>Square: <a href="{{ barber.square }}" rel="noopener" target="_blank">@{{ barber.insta }}</a></p>
         </div>
       </div>
     </div>
-    <div class="cell large-4">
-      <div class="card">
-        <img class="avatar" alt="Alex Kuechenmeister" src="/img/alex.jpg">
-        <div class="info">
-          <h2>Alex Kuechenmeister</h2>
-          <p>Phone: <a href="tel:4073993598">(407) 399-3598</a></p>
-          <p>Insta: <a href="https://www.instagram.com/alexkthebarber/" rel="noopener" target="_blank">@alexkthebarber</a></p>
-          <p>Square: <a href="https://square.site/book/BE2BBS4A7C5DP/alex-the-barber" rel="noopener" target="_blank">@alex-the-barber</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="cell large-4">
-      <div class="card">
-        <img class="avatar" alt="Tito Santiago" src="/img/tito.jpg">
-        <div class="info">
-          <h2>Tito Santiago</h2>
-          <p>Phone: <a href="tel:4074322957">(407) 432-2957</a></p>
-          <p>Insta: <a href="https://www.instagram.com/barbertitosantiago/" rel="noopener" target="_blank">@barbertitosantiago</a></p>
-          <p>Square: <a href="https://square.site/book/414FC5X6H1XTC/barber-tito-orlando-fl" rel="noopener" target="_blank">@alex-the-barber</a></p>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
