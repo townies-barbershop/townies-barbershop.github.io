@@ -4,8 +4,8 @@ title: Barbers
 
 <div class="grid-container">
   <div class="grid-x grid-margin-x barbers">
-    <div class="cell large-6">
-      <div class="card grid-x">
+    <div class="cell large-4">
+      <div class="card">
         <img class="avatar" alt="Colin Davey" src="/img/colin.jpg">
         <div class="info">
           <h2>Colin Davey</h2>
@@ -15,7 +15,7 @@ title: Barbers
         </div>
       </div>
     </div>
-    <div class="cell large-6">
+    <div class="cell large-4">
       <div class="card">
         <img class="avatar" alt="Alex Kuechenmeister" src="/img/alex.jpg">
         <div class="info">
@@ -23,6 +23,17 @@ title: Barbers
           <p>Phone: <a href="tel:4073993598">(407) 399-3598</a></p>
           <p>Insta: <a href="https://www.instagram.com/alexkthebarber/" rel="noopener" target="_blank">@alexkthebarber</a></p>
           <p>Square: <a href="https://square.site/book/BE2BBS4A7C5DP/alex-the-barber" rel="noopener" target="_blank">@alex-the-barber</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="cell large-4">
+      <div class="card">
+        <img class="avatar" alt="Tito Santiago" src="/img/tito.jpg">
+        <div class="info">
+          <h2>Tito Santiago</h2>
+          <p>Phone: <a href="tel:4074322957">(407) 432-2957</a></p>
+          <p>Insta: <a href="https://www.instagram.com/barbertitosantiago/" rel="noopener" target="_blank">@barbertitosantiago</a></p>
+          <p>Square: <a href="https://square.site/book/414FC5X6H1XTC/barber-tito-orlando-fl" rel="noopener" target="_blank">@alex-the-barber</a></p>
         </div>
       </div>
     </div>
