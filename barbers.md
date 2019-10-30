@@ -28,7 +28,7 @@ barbers:
           <h2>{{ barber.name }}</h2>
           <p>Phone: <a href="tel:{{ barber.phone | remove: "(" | remove: ")" | remove: " " | remove: "-" }}">{{ barber.phone }}</a></p>
           <p>Insta: <a href="https://www.instagram.com/{{ barber.insta }}/" rel="noopener" target="_blank">@{{ barber.insta }}</a></p>
-          <p>Square: <a href="{{ barber.square }}" rel="noopener" target="_blank">@{{ barber.insta }}</a></p>
+          <p>Appointments: <a href="{{ barber.square }}" rel="noopener" target="_blank">Book Here</a></p>
         </div>
       </div>
     </div>
