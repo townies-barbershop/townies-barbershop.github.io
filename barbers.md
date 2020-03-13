@@ -16,12 +16,17 @@ barbers:
     phone: "(407) 432-2957"
     insta: "barbertitosantiago"
     square: "https://square.site/book/414FC5X6H1XTC/barber-tito-orlando-fl"
+  - name: "Mick Tyrrell"
+    image: "/img/mick.jpg"
+    phone: "(239) 810-8092"
+    insta: "micktyrrellbarber"
+    square: "https://square.site/book/4P9FSRX17P39R/mick-t-barber-orlando-fl"
 ---
 
 <div class="grid-container">
   <div class="grid-x grid-margin-x barbers">
     {% for barber in page.barbers %}
-    <div class="cell large-4">
+    <div class="cell large-3">
       <div class="card">
         <img class="avatar" alt="{{ barber.name }}" src="{{ barber.image }}">
         <div class="info">
