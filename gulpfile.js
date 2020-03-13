@@ -1,14 +1,13 @@
 var child = require('child_process');
 var gulp = require('gulp');
 var concat = require('gulp-concat');
-var filelog = require('gulp-filelog');
 var htmlmin = require('gulp-htmlmin');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
-var gutil = require('gulp-util');
 var postcss = require('gulp-postcss');
 var uncss = require('uncss').postcssPlugin;
 var cssnano = require('cssnano');
+var log = require('fancy-log');
 
 gulp.task('sass', function() {
   // Compile SASS.
@@ -29,8 +28,7 @@ gulp.task('sass', function() {
           '_site/barbers.html',
         ],
       }), cssnano()]))
-    .pipe(gulp.dest('./css'))
-    .pipe(filelog());
+    .pipe(gulp.dest('./css'));
 });
 
 gulp.task('sass:watch', function() {
@@ -41,12 +39,10 @@ gulp.task('js', function() {
   // Compile JS.
   return gulp.src([
     './node_modules/foundation-sites/dist/js/foundation.js',
-    './_js/townies.js',
   ])
     .pipe(concat('townies.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('js'))
-    .pipe(filelog());
+    .pipe(gulp.dest('js'));
 });
 
 gulp.task('js:watch', function() {
@@ -66,7 +62,7 @@ gulp.task('jekyll', function(gulpCallback) {
     buffer.toString()
       .split(/\n/)
       .forEach(function(message) {
-        gutil.log('Jekyll: ' + message);
+        log('Jekyll: ' + message);
       });
   };
 
@@ -83,7 +79,7 @@ gulp.task('jekyll:serve', function() {
     buffer.toString()
       .split(/\n/)
       .forEach(function(message) {
-        gutil.log('Jekyll: ' + message);
+        log('Jekyll: ' + message);
       });
   };
 
