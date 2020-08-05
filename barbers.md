@@ -21,12 +21,17 @@ barbers:
     phone: "(239) 810-8092"
     insta: "micktyrrellbarber"
     square: "https://square.site/book/4P9FSRX17P39R/mick-t-barber-orlando-fl"
+  - name: "Christopher X. Alvarado"
+    image: "/img/chris.jpg"
+    phone: "(407) 459-0113"
+    insta: "belikebuddha2"
+    square: "https://square.site/book/LFFAZ2TXYM6FR/christopher-x-alvarado-orlando-fl"
 ---
 
 <div class="grid-container">
   <div class="grid-x grid-margin-x barbers">
     {% for barber in page.barbers %}
-    <div class="cell large-3">
+    <div class="cell large-4">
       <div class="card">
         <img class="avatar" alt="{{ barber.name }}" src="{{ barber.image }}">
         <div class="info">
