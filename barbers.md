@@ -31,7 +31,7 @@ barbers:
 <div class="grid-container">
   <div class="grid-x grid-margin-x barbers">
     {% for barber in page.barbers %}
-    <div class="cell large-4">
+    <div class="cell large-3">
       <div class="card">
         <img class="avatar" alt="{{ barber.name }}" src="{{ barber.image }}">
         <div class="info">
