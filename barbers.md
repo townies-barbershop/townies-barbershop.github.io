@@ -1,6 +1,16 @@
 ---
 title: Barbers
 barbers:
+  - name: "Christopher X. Alvarado"
+    image: "/img/chris.jpg"
+    phone: "(407) 459-0113"
+    insta: "belikebuddha2"
+    square: "https://square.site/book/LFFAZ2TXYM6FR/christopher-x-alvarado-orlando-fl"
+  - name: "Mick Tyrrell"
+    image: "/img/mick.jpg"
+    phone: "(239) 810-8092"
+    insta: "micktyrrellbarber"
+    square: "https://square.site/book/4P9FSRX17P39R/mick-t-barber-orlando-fl"
   - name: "Colin Davey"
     image: "/img/colin.jpg"
     phone: "(407) 459-3589"
@@ -11,16 +21,6 @@ barbers:
     phone: "(407) 399-3598"
     insta: "alexkthebarber"
     square: "https://square.site/book/BE2BBS4A7C5DP/alex-the-barber"
-  - name: "Mick Tyrrell"
-    image: "/img/mick.jpg"
-    phone: "(239) 810-8092"
-    insta: "micktyrrellbarber"
-    square: "https://square.site/book/4P9FSRX17P39R/mick-t-barber-orlando-fl"
-  - name: "Christopher X. Alvarado"
-    image: "/img/chris.jpg"
-    phone: "(407) 459-0113"
-    insta: "belikebuddha2"
-    square: "https://square.site/book/LFFAZ2TXYM6FR/christopher-x-alvarado-orlando-fl"
 ---
 
 <div class="grid-container">
