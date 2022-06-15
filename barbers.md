@@ -1,11 +1,6 @@
 ---
 title: Barbers
 barbers:
-  - name: "Jason Smith"
-    image: "/img/jason.jpg"
-    phone: "(863) 258-5352"
-    insta: "dashingdevilbarber"
-    square: "https://square.site/book/5NQZXTKMRTQ3P/the-dashing-devil-barber-co-orlando-fl"
   - name: "Christopher X. Alvarado"
     image: "/img/chris.jpg"
     phone: "(407) 459-0113"
