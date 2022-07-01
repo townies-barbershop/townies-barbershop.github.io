@@ -1,6 +1,11 @@
 ---
 title: Barbers
 barbers:
+  - name: "Katrina Cook"
+    image: "/img/katrina.jpg"
+    phone: "(704) 517-8573"
+    insta: "katrina.cuts"
+    square: "https://katrina-cook.square.site/"
   - name: "Michael Loperena"
     image: "/img/michael.jpg"
     phone: "(407) 738-8651"
