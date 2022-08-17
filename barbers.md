@@ -3,7 +3,6 @@ title: Barbers
 barbers:
   - name: "Katrina Cook"
     image: "/img/katrina.jpg"
-    phone: "(704) 517-8573"
     insta: "katrina.cuts"
     square: "https://katrina-cook.square.site/"
   - name: "Michael Loperena"
@@ -41,7 +40,7 @@ barbers:
         <img class="avatar" alt="{{ barber.name }}" src="{{ barber.image }}">
         <div class="info">
           <h2>{{ barber.name }}</h2>
-          <p>Phone: <a href="tel:{{ barber.phone | remove: "(" | remove: ")" | remove: " " | remove: "-" }}">{{ barber.phone }}</a></p>
+          {% if barber.phone %}<p>Phone: <a href="tel:{{ barber.phone | remove: "(" | remove: ")" | remove: " " | remove: "-" }}">{{ barber.phone }}</a></p>{% endif %}
           <p>Insta: <a href="https://www.instagram.com/{{ barber.insta }}/" rel="noopener" target="_blank">@{{ barber.insta }}</a></p>
           <p>Appointments: <a href="{{ barber.square }}" rel="noopener" target="_blank">Book Here</a></p>
         </div>
