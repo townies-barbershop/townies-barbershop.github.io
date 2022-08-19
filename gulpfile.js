@@ -1,17 +1,18 @@
-var child = require('child_process');
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var htmlmin = require('gulp-htmlmin');
-var sass = require('gulp-sass')(require('sass'));
-var uglify = require('gulp-uglify');
-var postcss = require('gulp-postcss');
-var uncss = require('uncss').postcssPlugin;
-var cssnano = require('cssnano');
-var log = require('fancy-log');
+import gulp from 'gulp';
+import { spawn } from 'child_process';
+import concat from 'gulp-concat';
+import htmlmin from 'gulp-htmlmin';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
+import uglify from 'gulp-uglify';
+import postcss from 'gulp-postcss';
+import { postcssPlugin as uncss } from 'uncss';
+import cssnano from 'cssnano';
+import { default as log } from 'fancy-log';
 
-gulp.task('sass', function() {
-  // Compile SASS.
-  return gulp.src('./_css/townies.scss')
+// Compile SASS.
+export const css = () => gulp.src('./_css/townies.scss')
     .pipe(sass({
       includePaths: [
         './_css',
@@ -29,34 +30,25 @@ gulp.task('sass', function() {
         ],
       }), cssnano()]))
     .pipe(gulp.dest('./css'));
-});
 
-gulp.task('sass:watch', function() {
-  gulp.watch('./_css/**/*.scss', ['sass']);
-});
+export const cssWatch = () => gulp.watch('./_css/**/*.scss', ['css']);
 
-gulp.task('js', function() {
-  // Compile JS.
-  return gulp.src([
+// Compile JS.
+export const js = () => gulp.src([
     './node_modules/foundation-sites/dist/js/foundation.js',
   ])
     .pipe(concat('townies.js'))
     .pipe(uglify())
     .pipe(gulp.dest('js'));
-});
 
-gulp.task('js:watch', function() {
-  gulp.watch('./_js/**/*.js', ['js']);
-});
+export const jsWatch = () => gulp.watch('./_js/**/*.js', ['js']);
 
-gulp.task('html-minify', function() {
-  return gulp.src('_site/**/*.html')
+export const htmlMinify = () => gulp.src('_site/**/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('_site'));
-});
 
-gulp.task('jekyll', function(gulpCallback) {
-  const jekyll = child.spawn('jekyll', ['build']);
+export const jekyll = (gulpCallback) => {
+  const jekyll = spawn('bundle', ['exec', 'jekyll', 'build']);
 
   const jekyllLogger = function(buffer) {
     buffer.toString()
@@ -70,10 +62,10 @@ gulp.task('jekyll', function(gulpCallback) {
   jekyll.stderr.on('data', jekyllLogger);
 
   jekyll.on('exit', gulpCallback);
-});
+}
 
-gulp.task('jekyll:serve', function() {
-  const jekyll = child.spawn('bundle', ['exec', 'jekyll', 'serve']);
+export const jekyllServe = () => {
+  const jekyll = spawn('bundle', ['exec', 'jekyll', 'serve']);
 
   const jekyllLogger = function(buffer) {
     buffer.toString()
@@ -85,8 +77,10 @@ gulp.task('jekyll:serve', function() {
 
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
-});
+}
 
-gulp.task('default', gulp.series('sass', 'js', 'jekyll:serve', 'sass:watch', 'js:watch'));
+export const dev = gulp.series(css, js, jekyllServe, cssWatch, jsWatch);
 
-gulp.task('build', gulp.series('sass', 'js', 'jekyll', 'html-minify'));
+export const build = gulp.series(css, js, jekyll, htmlMinify);
+
+export default dev;
