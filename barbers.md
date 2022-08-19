@@ -8,7 +8,7 @@ barbers:
   - name: "Michael Loperena"
     image: "/img/michael.jpg"
     phone: "(407) 738-8651"
-    insta: "el_barbu86"
+    insta: "_michaelloperena_"
     square: "https://michael-loperena.square.site/"
   - name: "Christopher X. Alvarado"
     image: "/img/chris.jpg"
