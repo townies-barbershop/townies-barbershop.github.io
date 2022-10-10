@@ -32,10 +32,10 @@ barbers:
     square: "https://square.site/book/BE2BBS4A7C5DP/alexkthebarber-llc-orlando-fl"
 ---
 
-<div class="grid-container">
-  <div class="grid-x grid-margin-x barbers">
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 barbers">
     {% for barber in page.barbers %}
-    <div class="cell medium-6 large-4">
+    <div class="col">
       <div class="card">
         <img class="avatar" alt="{{ barber.name }}" src="{{ barber.image }}">
         <div class="info">

@@ -1,3 +1,21 @@
 {% assign current = page.url | downcase | split: '/' | last %}
-<li{% if page.url == "/" %} class="active-trail active" {% endif %}><a href="/" title="Home" {% if page.url == "/" %} class="active" {% endif %}>Home</a></li>
-<li{% if current == "barbers.html" %} class="active-trail active" {% endif %}><a href="/barbers" title="Barbers" {% if current == "barbers.html" %} class="active" {% endif %}>Appointments / Barbers</a></li>
+<nav class="navbar navbar-expand-md sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand d-sm-block d-md-none fs-5" href="/">
+      <img class="d-inline-block align-middle me-2" width="60" height="60" src="/img/logo.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav text-end">
+        <li class="nav-item{% if page.url == "/" %} active{% endif %}">
+          <a href="/" title="Home" class="nav-link pe-2{% if page.url == "/" %} active{% endif %}">Home</a>
+        </li>
+        <li class="nav-item{% if current == "barbers.html" %} active{% endif %}">
+          <a href="/barbers" title="Barbers" class="nav-link pe-2{% if current == "barbers.html" %} active{% endif %}">Appointments / Barbers</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

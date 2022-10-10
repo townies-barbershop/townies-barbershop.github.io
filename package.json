@@ -5,6 +5,8 @@
   "type": "module",
   "main": "gulpfile.js",
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "bootstrap": "^5.2.1",
     "child_process": "^1.0.2",
     "cssnano": "^5.1.13",
     "fancy-log": "^2.0.0",
@@ -13,10 +15,10 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-postcss": "^9.0.0",
     "gulp-sass": "^5.1.0",
-    "gulp-uglify": "^3.0.2",
+    "gulp-terser": "^2.1.0",
     "postcss": "^8.4.16",
-    "sass": "^1.54.4",
-    "uncss": "^0.17.3"
+    "postcss-discard-comments": "^5.1.2",
+    "sass": "^1.54.4"
   },
   "scripts": {
     "build:prod": "JEKYLL_ENV=production npm run gulp:build",
@@ -30,8 +32,5 @@
     "url": "git+https://github.com/townies-barbershop/towniesbarbershop.github.io.git"
   },
   "author": "",
-  "homepage": "https://www.towniesbarbershop.com",
-  "dependencies": {
-    "foundation-sites": "^6.7.5"
-  }
+  "homepage": "https://www.towniesbarbershop.com"
 }
