@@ -28,6 +28,7 @@ export const cssWatch = () => gulp.watch('./_css/**/*.scss', cssDev);
 export const jsDev = () => gulp.src([
     './node_modules/bootstrap/dist/js/bootstrap.min.js'
   ])
+  .pipe(concat('script.js'))
   .pipe(gulp.dest('js'));
 
 export const jsWatch = () => gulp.watch('./_js/**/*.js', jsDev);
@@ -71,8 +72,9 @@ export const cssProd = () => gulp.src('./_css/townies.scss')
     .pipe(gulp.dest('./_site/css'));
 
 export const jsProd = () => gulp.src([
-    './node_modules/bootstrap/dist/js/bootstrap.min.js'
-  ])
+      './node_modules/bootstrap/dist/js/bootstrap.min.js'
+    ])
+    .pipe(concat('script.js'))
     .pipe(terser({
       toplevel: true,
       format: {
