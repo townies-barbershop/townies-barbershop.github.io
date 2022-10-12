@@ -2,4 +2,5 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
+css/townies.css
 node_modules
