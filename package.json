@@ -6,9 +6,9 @@
   "main": "gulpfile.js",
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
-    "bootstrap": "^5.2.1",
+    "bootstrap": "^5.2.3",
     "child_process": "^1.0.2",
-    "cssnano": "^5.1.13",
+    "cssnano": "^6.0.0",
     "fancy-log": "^2.0.0",
     "gulp": "^4.0",
     "gulp-concat": "^2.6.1",
@@ -16,9 +16,8 @@
     "gulp-postcss": "^9.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-terser": "^2.1.0",
-    "postcss": "^8.4.16",
-    "postcss-discard-comments": "^5.1.2",
-    "sass": "^1.54.4"
+    "postcss": "^8.4.23",
+    "sass": "^1.62.0"
   },
   "scripts": {
     "build:prod": "JEKYLL_ENV=production npm run gulp:build",
