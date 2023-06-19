@@ -56,7 +56,7 @@ permalink: /barbers
         <div class="card-body">
           <h2 class="card-title">{{ barber.name }}</h2>
           {% if barber.phone %}<p>Phone: <a href="tel:{{ barber.phone | remove: "(" | remove: ")" | remove: " " | remove: "-" }}">{{ barber.phone }}</a></p>{% endif %}
-          <p>Insta: <a href="https://www.instagram.com/{{ barber.insta }}/" rel="noopener" target="_blank">@{{ barber.insta }}</a></p>
+          {% if barber.insta %}<p>Insta: <a href="https://www.instagram.com/{{ barber.insta }}/" rel="noopener" target="_blank">@{{ barber.insta }}</a></p>{% endif %}
           <p>Appointments: <a href="{{ barber.square }}" rel="noopener" target="_blank">Book Here</a></p>
           <span class="badge text-bg-primary position-absolute bottom-0 end-0 mb-1 me-1">{{ barber.location }}</span>
         </div>
@@ -71,7 +71,7 @@ permalink: /barbers
         <div class="card-body">
           <h2 class="card-title">{{ barber.name }}</h2>
           {% if barber.phone %}<p>Phone: <a href="tel:{{ barber.phone | remove: "(" | remove: ")" | remove: " " | remove: "-" }}">{{ barber.phone }}</a></p>{% endif %}
-          <p>Insta: <a href="https://www.instagram.com/{{ barber.insta }}/" rel="noopener" target="_blank">@{{ barber.insta }}</a></p>
+          {% if barber.insta %}<p>Insta: <a href="https://www.instagram.com/{{ barber.insta }}/" rel="noopener" target="_blank">@{{ barber.insta }}</a></p>{% endif %}
           <p>Appointments: <a href="{{ barber.square }}" rel="noopener" target="_blank">Book Here</a></p>
           <span class="badge text-bg-primary position-absolute bottom-0 end-0 mb-1 me-1">{{ barber.location }}</span>
         </div>
