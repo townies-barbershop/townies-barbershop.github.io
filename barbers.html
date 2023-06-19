@@ -5,38 +5,47 @@ barbers:
     image: "/img/katrina.webp"
     insta: "katrina.cuts"
     square: "https://katrina-cook.square.site/"
+    location: Orlando
   - name: "Michael Loperena"
     image: "/img/michael.webp"
     phone: "(407) 738-8651"
     insta: "_michaelloperena_"
     square: "https://michael-loperena.square.site/"
+    location: Orlando
   - name: "Christopher X. Alvarado"
     image: "/img/chris.webp"
     phone: "(407) 459-0113"
     insta: "belikebuddha2"
     square: "https://belikebuddha.square.site/"
+    location: Orlando
   - name: "Mick Tyrrell"
     image: "/img/mick.webp"
     phone: "(239) 810-8092"
     insta: "micktyrrellbarber"
     square: "https://mickthebarber.square.site/"
+    location: Orlando
   - name: "Colin Davey"
     image: "/img/colin.webp"
     phone: "(407) 459-3589"
     insta: "bostoncolin"
     square: "https://square.site/book/5CGVSJ9WRXGYM/bostoncolin-orlando-fl"
+    location: Orlando
   - name: "Alex Kuechenmeister"
     image: "/img/alex.webp"
     phone: "(407) 399-3598"
     insta: "alexkthebarber"
     square: "https://square.site/book/BE2BBS4A7C5DP/alexkthebarber-llc-orlando-fl"
+    location: Winter Park
 permalink: /barbers
 ---
+{% assign barbers_orlando = page.barbers | where: 'location', 'Orlando' %}
+{% assign barbers_wp = page.barbers | where: 'location', 'Winter Park' %}
 
 <div class="container">
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 barbers">
-    {% for barber in page.barbers %}
+  <div class="row row-cols-1 row-cols-md-2 barbers">
     <div class="col">
+      <h2 class="text-center">Orlando</h2>
+      {% for barber in barbers_orlando %}
       <div class="card">
         <img class="card-img-top" alt="{{ barber.name }}" src="{{ barber.image }}">
         <div class="card-body">
@@ -44,9 +53,25 @@ permalink: /barbers
           {% if barber.phone %}<p>Phone: <a href="tel:{{ barber.phone | remove: "(" | remove: ")" | remove: " " | remove: "-" }}">{{ barber.phone }}</a></p>{% endif %}
           <p>Insta: <a href="https://www.instagram.com/{{ barber.insta }}/" rel="noopener" target="_blank">@{{ barber.insta }}</a></p>
           <p>Appointments: <a href="{{ barber.square }}" rel="noopener" target="_blank">Book Here</a></p>
+          <span class="badge text-bg-primary position-absolute bottom-0 end-0 mb-1 me-1">{{ barber.location }}</span>
         </div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
+    <div class="col">
+      <h2 class="text-center">Winter Park</h2>
+      {% for barber in barbers_wp %}
+      <div class="card">
+        <img class="card-img-top" alt="{{ barber.name }}" src="{{ barber.image }}">
+        <div class="card-body">
+          <h2 class="card-title">{{ barber.name }}</h2>
+          {% if barber.phone %}<p>Phone: <a href="tel:{{ barber.phone | remove: "(" | remove: ")" | remove: " " | remove: "-" }}">{{ barber.phone }}</a></p>{% endif %}
+          <p>Insta: <a href="https://www.instagram.com/{{ barber.insta }}/" rel="noopener" target="_blank">@{{ barber.insta }}</a></p>
+          <p>Appointments: <a href="{{ barber.square }}" rel="noopener" target="_blank">Book Here</a></p>
+          <span class="badge text-bg-primary position-absolute bottom-0 end-0 mb-1 me-1">{{ barber.location }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
