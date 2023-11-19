@@ -60,8 +60,8 @@ permalink: /barbers
 <div class="container">
   <div class="row row-cols-1 row-cols-md-2 barbers">
     <div class="col">
-      <h2 class="text-center">Orlando</h2>
-      {% for barber in barbers_orlando %}
+      <h2 class="text-center">Winter Park</h2>
+      {% for barber in barbers_wp %}
       <div class="card">
         <img class="card-img-top" alt="{{ barber.name }}" src="{{ barber.image }}">
         <div class="card-body">
@@ -75,8 +75,8 @@ permalink: /barbers
       {% endfor %}
     </div>
     <div class="col">
-      <h2 class="text-center">Winter Park</h2>
-      {% for barber in barbers_wp %}
+      <h2 class="text-center">Orlando</h2>
+      {% for barber in barbers_orlando %}
       <div class="card">
         <img class="card-img-top" alt="{{ barber.name }}" src="{{ barber.image }}">
         <div class="card-body">
