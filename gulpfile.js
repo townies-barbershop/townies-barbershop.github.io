@@ -2,12 +2,12 @@ import gulp from 'gulp';
 import { spawn } from 'child_process';
 import concat from 'gulp-concat';
 import htmlmin from 'gulp-htmlmin';
-import dartSass from 'sass';
+import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 const sass = gulpSass(dartSass);
 import terser from 'gulp-terser';
 import postcss from 'gulp-postcss';
-import purgecss from '@fullhuman/postcss-purgecss';
+import { purgeCSSPlugin } from '@fullhuman/postcss-purgecss';
 import cssnano from 'cssnano';
 import removeComments from 'postcss-discard-comments';
 import { default as log } from 'fancy-log';
@@ -59,7 +59,7 @@ export const cssProd = () => gulp.src('./_css/townies.scss')
       ],
     })
     .on('error', sass.logError))
-    .pipe(postcss([purgecss({
+    .pipe(postcss([purgeCSSPlugin({
         content: [
           '_site/index.html',
           '_site/appointments.html',
