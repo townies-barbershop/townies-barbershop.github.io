@@ -4,17 +4,17 @@ layout: compress
 
 <!doctype html>
 <html lang="en" dir="ltr">
-{% include head.html %}
+{% include "head.liquid" %}
 
 <body>
   <div class="text-center d-none d-md-block pt-3 pb-3">
     <img alt="Townies Barbershop logo" src="/img/logo.webp">
   </div>
-  {% include navigation.html %}
+  {% include "navigation.liquid" %}
   <main>
     {{ content }}
   </main>
-  {% include footer.html %}
+  {% include "footer.liquid" %}
   <script src="/js/townies.js"></script>
 </body>
 </html>

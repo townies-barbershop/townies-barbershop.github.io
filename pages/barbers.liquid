@@ -41,10 +41,11 @@ barbers:
     insta: "alexkthebarber"
     square: "https://square.site/book/BE2BBS4A7C5DP/alexkthebarber-llc-orlando-fl"
     location: Winter Park
-permalink: /barbers
+permalink: /barbers/
+layout: default
 ---
-{% assign barbers_orlando = page.barbers | where: 'location', 'Orlando' %}
-{% assign barbers_wp = page.barbers | where: 'location', 'Winter Park' %}
+{% assign barbers_orlando = barbers | where: 'location', 'Orlando' %}
+{% assign barbers_wp = barbers | where: 'location', 'Winter Park' %}
 
 <div class="container">
   <div class="row row-cols-1 row-cols-md-2 barbers">
