@@ -34,7 +34,7 @@ export const jsDev = () => gulp.src([
 export const jsWatch = () => gulp.watch('./_js/**/*.js', jsDev);
 
 export const htmlServe = () => {
-  const eleventy = spawn('npx', ['@11ty/eleventy']);
+  const eleventy = spawn('npx', ['@11ty/eleventy', '--serve']);
 
   const htmlLogger = function(buffer) {
     buffer.toString()
