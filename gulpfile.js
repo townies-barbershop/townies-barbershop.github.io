@@ -57,16 +57,6 @@ export const cssProd = () => gulp.src('./_css/townies.scss')
       ],
     })
     .on('error', sass.logError))
-    .pipe(postcss([purgeCSSPlugin({
-        content: [
-          '_site/index.html',
-          '_site/appointments.html',
-          '_site/barbers.html',
-        ]
-      }),
-      removeComments({ removeAll: true }),
-      cssnano()
-    ]))
     .pipe(gulp.dest('./_site/css'));
 
 export const jsProd = () => gulp.src([
