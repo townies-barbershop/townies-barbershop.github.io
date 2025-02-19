@@ -40,18 +40,15 @@ barbers:
     phone: "(407) 399-3598"
     insta: "alexkthebarber"
     square: "https://square.site/book/BE2BBS4A7C5DP/alexkthebarber-llc-orlando-fl"
-    location: Winter Park
+    location: Orlando
 permalink: /barbers/
 layout: default
 ---
-{% assign barbers_orlando = barbers | where: 'location', 'Orlando' %}
-{% assign barbers_wp = barbers | where: 'location', 'Winter Park' %}
 
 <div class="container">
-  <div class="row row-cols-1 row-cols-md-2 barbers">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 barbers">
+    {% for barber in barbers %}
     <div class="col">
-      <h2 class="text-center">Winter Park</h2>
-      {% for barber in barbers_wp %}
       <div class="card">
         <img class="card-img-top" alt="{{ barber.name }}" src="{{ barber.image }}">
         <div class="card-body">
@@ -59,25 +56,9 @@ layout: default
           {% if barber.phone %}<p>Phone: <a href="tel:{{ barber.phone | remove: "(" | remove: ")" | remove: " " | remove: "-" }}">{{ barber.phone }}</a></p>{% endif %}
           {% if barber.insta %}<p>Insta: <a href="https://www.instagram.com/{{ barber.insta }}/" rel="noopener" target="_blank">@{{ barber.insta }}</a></p>{% endif %}
           <p>Appointments: <a href="{{ barber.square }}" rel="noopener" target="_blank">Book Here</a></p>
-          <span class="badge text-bg-primary position-absolute bottom-0 end-0 mb-1 me-1">{{ barber.location }}</span>
         </div>
       </div>
-      {% endfor %}
     </div>
-    <div class="col">
-      <h2 class="text-center">Orlando</h2>
-      {% for barber in barbers_orlando %}
-      <div class="card">
-        <img class="card-img-top" alt="{{ barber.name }}" src="{{ barber.image }}">
-        <div class="card-body">
-          <h2 class="card-title">{{ barber.name }}</h2>
-          {% if barber.phone %}<p>Phone: <a href="tel:{{ barber.phone | remove: "(" | remove: ")" | remove: " " | remove: "-" }}">{{ barber.phone }}</a></p>{% endif %}
-          {% if barber.insta %}<p>Insta: <a href="https://www.instagram.com/{{ barber.insta }}/" rel="noopener" target="_blank">@{{ barber.insta }}</a></p>{% endif %}
-          <p>Appointments: <a href="{{ barber.square }}" rel="noopener" target="_blank">Book Here</a></p>
-          <span class="badge text-bg-primary position-absolute bottom-0 end-0 mb-1 me-1">{{ barber.location }}</span>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
+    {% endfor %}
   </div>
 </div>
