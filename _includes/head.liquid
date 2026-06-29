@@ -1,10 +1,23 @@
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <title>{{ title }} | {{ site_title }}</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <meta name="description" content="{{ site.description }}">
-    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta name="description" content="{{ description }}">
+    {% if noindex %}<meta name="robots" content="noindex">{% endif %}
     <link rel="canonical" href="{{ site_url }}{{ page.url }}">
+
+    <meta property="og:type" content="business.business">
+    <meta property="og:site_name" content="{{ site_title }}">
+    <meta property="og:title" content="{{ title }} | {{ site_title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:url" content="{{ site_url }}{{ page.url }}">
+    <meta property="og:image" content="{{ site_url }}/img/logo.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }} | {{ site_title }}">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:image" content="{{ site_url }}/img/logo.webp">
+
     <link type="text/css" rel="stylesheet" media="all" href="/css/townies.css">
     <script type="application/ld+json">
       {
@@ -19,9 +32,12 @@
           "addressCountry": "US",
           "postalCode": "32803"
         },
-        "image": "https://www.towniesbarbershop.com/img/logo.webp",
-        "telePhone": "407-459-3589",
-        "url": "https://www.towniesbarbershop.com",
+        "image": "{{ site_url }}/img/logo.webp",
+        "telephone": "407-459-3589",
+        "url": "{{ site_url }}",
+        "sameAs": [
+          "https://www.instagram.com/towniesbarbershop/"
+        ],
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",

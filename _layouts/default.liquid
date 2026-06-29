@@ -7,11 +7,12 @@ layout: compress
 {% include "head.liquid" %}
 
 <body>
+  <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a>
   <div class="text-center d-none d-md-block pt-3 pb-3">
     <img alt="Townies Barbershop logo" src="/img/logo.webp">
   </div>
   {% include "navigation.liquid" %}
-  <main>
+  <main id="main">
     {{ content }}
   </main>
   {% include "footer.liquid" %}
