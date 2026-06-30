@@ -11,17 +11,17 @@ jobs:
     name: 11ty build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Install Node
-        uses: actions/setup-node@v4
-        with: 
-          node-version: 20
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
           cache: 'npm'
       - name: Build site
         run: |
-          npm install
+          npm ci
           npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
